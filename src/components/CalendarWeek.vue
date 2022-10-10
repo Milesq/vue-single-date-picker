@@ -15,28 +15,28 @@
 import CalendarDate from './CalendarDate';
 export default {
   components: {
-    CalendarDate
+    CalendarDate,
   },
   props: {
     week: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     isToday: {
       type: Number,
-      default: 0
+      default: 0,
     },
     isSelected: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   methods: {
     selectDate(date) {
       this.$emit('selectDate', date);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>

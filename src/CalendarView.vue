@@ -1,9 +1,6 @@
 /* eslint-disable no-console */
 <template>
-  <div
-    id="single-date-picker"
-    class="single-date-picker__calendar-view"
-  >
+  <div id="single-date-picker" class="single-date-picker__calendar-view">
     <CalendarMonthHeader
       :year="year"
       :month="month"
@@ -29,18 +26,18 @@ export default {
   name: 'CalendarView',
   components: {
     CalendarMonthHeader,
-    CalendarMonth
+    CalendarMonth,
   },
   props: {
     date: {
       type: Object,
-      default: () => null
+      default: () => null,
     },
     firstDayOfWeek: {
       type: Number,
       default: 0,
-      validator: (value) => (value >= 0) && (value <= 6)
-    }
+      validator: value => value >= 0 && value <= 6,
+    },
   },
   data() {
     return {
@@ -51,20 +48,22 @@ export default {
       todayMonth: 0,
       selectedDate: null,
       weekStartDay: 0,
-    }
+    };
   },
   computed: {
     numDays() {
       return new Date(this.year, this.month + 1, 0).getDate();
     },
     firstDay() {
-      const startDay = new Date(this.year, this.month, 1).getDay() - this.weekStartDay;
+      const startDay =
+        new Date(this.year, this.month, 1).getDay() - this.weekStartDay;
       if (startDay < 0) return NUM_DAYS_IN_WEEK - Math.abs(startDay);
 
       return startDay;
     },
     lastDay() {
-      const lastDay = new Date(this.year, this.month + 1, 0).getDay() - this.weekStartDay;
+      const lastDay =
+        new Date(this.year, this.month + 1, 0).getDay() - this.weekStartDay;
       if (lastDay < 0) return NUM_DAYS_IN_WEEK - Math.abs(lastDay);
 
       return lastDay;
@@ -76,22 +75,31 @@ export default {
       return this.lastDay + 1;
     },
     numWeeks() {
-      const daysLeft = this.numDays - this.numDaysInFirstWeek - this.numDaysInLastWeek;
+      const daysLeft =
+        this.numDays - this.numDaysInFirstWeek - this.numDaysInLastWeek;
       return daysLeft / 7 + 2;
     },
     numFullWeeks() {
       return this.numWeeks - 2;
     },
     datesInFirstWeek() {
-      return this.generateDatesInWeek(1, this.firstDay, this.numDaysInFirstWeek);
+      return this.generateDatesInWeek(
+        1,
+        this.firstDay,
+        this.numDaysInFirstWeek
+      );
     },
     datesInLastWeek() {
-      return this.generateDatesInWeek(this.numDays - this.numDaysInLastWeek + 1, 0, this.numDaysInLastWeek);
+      return this.generateDatesInWeek(
+        this.numDays - this.numDaysInLastWeek + 1,
+        0,
+        this.numDaysInLastWeek
+      );
     },
     datesInMiddleWeeks() {
       const startDates = [];
       for (let i = 0; i < this.numFullWeeks; i += 1) {
-        startDates[i] = this.datesInFirstWeek[6] + 1 + i*7;
+        startDates[i] = this.datesInFirstWeek[6] + 1 + i * 7;
       }
       return startDates.map(startDate => {
         return this.generateDatesInWeek(startDate, 0, 7);
@@ -101,8 +109,8 @@ export default {
       return [
         this.datesInFirstWeek,
         ...this.datesInMiddleWeeks,
-        this.datesInLastWeek
-      ]
+        this.datesInLastWeek,
+      ];
     },
     isCurrentMonth() {
       return this.todayMonth === this.month;
@@ -111,19 +119,22 @@ export default {
       return this.todayYear === this.year;
     },
     isToday() {
-      return (this.isCurrentMonth && this.isCurrentYear) ? this.todayDate : 0;
+      return this.isCurrentMonth && this.isCurrentYear ? this.todayDate : 0;
     },
     isSelected() {
       if (this.selectedDate) {
-        return (this.selectedDate.year === this.year) && (this.selectedDate.month === this.month) ? this.selectedDate.date : 0;
+        return this.selectedDate.year === this.year &&
+          this.selectedDate.month === this.month
+          ? this.selectedDate.date
+          : 0;
       }
       return 0;
-    }
+    },
   },
   watch: {
     date(val) {
       this.setDate(val);
-    }
+    },
   },
   created() {
     const date = new Date();
@@ -137,12 +148,15 @@ export default {
     this.todayYear = date.getFullYear();
     this.todayMonth = date.getMonth();
 
-    this.weekStartDay = (this.firstDayOfWeek >= 0 && this.firstDayOfWeek <= 6) ? this.firstDayOfWeek : 0;
+    this.weekStartDay =
+      this.firstDayOfWeek >= 0 && this.firstDayOfWeek <= 6
+        ? this.firstDayOfWeek
+        : 0;
   },
   methods: {
     generateDatesInWeek(startDate, startDay, numDays) {
       const datesInWeek = new Array(7).fill(0);
-      for (let i = 0; i < numDays; i+=1) {
+      for (let i = 0; i < numDays; i += 1) {
         datesInWeek[startDay + i] = startDate + i;
       }
       return datesInWeek;
@@ -168,8 +182,8 @@ export default {
         this.selectedDate = {
           year: this.year,
           month: this.month,
-          date
-        }
+          date,
+        };
         this.$emit('selectDate', this.selectedDate);
       }
     },
@@ -177,9 +191,9 @@ export default {
       this.year = date.year;
       this.month = date.month;
       this.selectedDate = this.date;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

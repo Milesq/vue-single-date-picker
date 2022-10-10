@@ -3,8 +3,10 @@
     <div
       v-show="date"
       class="single-date-picker__date"
-      :class="{'single-date-picker__today': isToday, 
-               'single-date-picker__selected': isSelected}"
+      :class="{
+        'single-date-picker__today': isToday,
+        'single-date-picker__selected': isSelected,
+      }"
       @click="selectDate"
     >
       {{ date }}
@@ -17,23 +19,23 @@ export default {
   props: {
     date: {
       type: Number,
-      default: () => 1
+      default: () => 1,
     },
     isToday: {
       type: Boolean,
-      default: false
+      default: false,
     },
     isSelected: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   methods: {
     selectDate() {
       this.$emit('selectDate', this.date);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

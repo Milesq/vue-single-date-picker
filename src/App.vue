@@ -6,14 +6,14 @@
 </template>
 
 <script>
-import CalendarView from './CalendarView.vue'
+import CalendarView from './CalendarView.vue';
 
 export default {
   name: 'App',
   components: {
-    CalendarView
-  }
-}
+    CalendarView,
+  },
+};
 </script>
 
 <style lang="scss">

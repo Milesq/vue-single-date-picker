@@ -11,10 +11,10 @@ export default {
   props: {
     day: {
       type: String,
-      default: () => ''
-    }
-  }
-}
+      default: () => '',
+    },
+  },
+};
 </script>
 
 <style scoped>

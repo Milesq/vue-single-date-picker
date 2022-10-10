@@ -27,16 +27,16 @@ import CalendarWeek from './CalendarWeek';
 export default {
   components: {
     CalendarWeekHeader,
-    CalendarWeek
+    CalendarWeek,
   },
   props: {
     datesPerWeek: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     isToday: {
       type: Number,
-      default: 0
+      default: 0,
     },
     isSelected: {
       type: Number,
@@ -45,12 +45,12 @@ export default {
     weekStartDay: {
       type: Number,
       default: 0,
-    }
+    },
   },
   data() {
     return {
       daysInWeek: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-    }
+    };
   },
   created() {
     this.rotateDaysInWeek(this.daysInWeek, this.weekStartDay);
@@ -60,13 +60,13 @@ export default {
       this.$emit('selectDate', date);
     },
     rotateDaysInWeek(daysInWeek, shifts) {
-      while(shifts--) {
+      while (shifts--) {
         var temp = daysInWeek.shift();
         daysInWeek.push(temp);
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

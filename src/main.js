@@ -1,8 +1,5 @@
-import Vue from 'vue'
-import CalendarView from './CalendarView.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import './assets/styles/common.scss';
 
-Vue.config.productionTip = false
-
-new Vue({
-  render: h => h(CalendarView),
-}).$mount('#single-date-picker')
+createApp(App).mount('#app');
