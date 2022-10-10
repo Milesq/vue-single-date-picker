@@ -1,7 +1,8 @@
 {
   "name": "vue-single-date-picker",
   "version": "0.5.12",
-  "main": "./dist/vue-single-date-picker.common.js",
+  "main": "./dist/lib.mjs",
+  "module": "./dist/lib.mjs",
   "license": "MIT",
   "files": [
     "/dist"
