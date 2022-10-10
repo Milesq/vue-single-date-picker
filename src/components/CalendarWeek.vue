@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import CalendarDate from './CalendarDate';
+import CalendarDate from './CalendarDate.vue';
 export default {
   components: {
     CalendarDate,

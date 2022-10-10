@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import CalendarWeekHeader from './CalendarWeekHeader';
-import CalendarWeek from './CalendarWeek';
+import CalendarWeekHeader from './CalendarWeekHeader.vue';
+import CalendarWeek from './CalendarWeek.vue';
 
 export default {
   components: {

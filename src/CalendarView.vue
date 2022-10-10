@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 <template>
   <div id="single-date-picker" class="single-date-picker__calendar-view">
     <CalendarMonthHeader
@@ -17,8 +16,8 @@
 </template>
 
 <script>
-import CalendarMonthHeader from './components/CalendarMonthHeader';
-import CalendarMonth from './components/CalendarMonth';
+import CalendarMonthHeader from './components/CalendarMonthHeader.vue';
+import CalendarMonth from './components/CalendarMonth.vue';
 
 const NUM_DAYS_IN_WEEK = 7;
 
