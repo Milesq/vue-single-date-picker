@@ -31,7 +31,7 @@ export default {
 h1 {
   color: #c7a3b5;
   background: linear-gradient(to right, #e0caca, #d4b8ca, #c7a3b5);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 60px;
   font-weight: 300;
