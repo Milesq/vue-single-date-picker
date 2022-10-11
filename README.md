@@ -1,29 +1,22 @@
 ## Demo
 https://jiayingy.github.io/vue-single-date-picker/
 
-## Installation
-```
-npm i vue-single-date-picker
-```
-
 ## How to use
-
-### Component
 
 Import package
 ```javascript
-import SingleDatePicker from 'vue-single-date-picker';
+import { CalendarView } from 'vue-single-date-picker'
 
 export default {
   components: {
-    SingleDatePicker
-  }
+    CalendarView,
+  },
 }
 ```
 
 Create component in your template
-```javascript
-<SingleDatePicker />
+```html
+<CalendarView />
 ```
 
 ### Styles
@@ -33,13 +26,13 @@ Create component in your template
 ```
 @import '~vue-single-date-picker/dist/vue-single-date-picker.css';
 ```
-### Props 
+### Props
 |Props|arguments|remarks|
 |:--|:--|:--|
 |date|```{ year: <Number>, month: <Number>, date: <Number> }```|E.g. 1 Jan 2020 <br> {year: 2020, month: 0, date: 1}|
-|first-day-of-week|```firstDayOfWeek: <Number>```|(0: Sunday ... 6: Saturday) <br> E.g. start week on Monday <br> :first-day-of-week="1"| 
+|first-day-of-week|```firstDayOfWeek: <Number>```|(0: Sunday ... 6: Saturday) <br> E.g. start week on Monday <br> :first-day-of-week="1"|
 
-### Events 
+### Events
 |events|arguments|remarks|
 |:--|:--|:--|
-|@selectDate|```{ year: <Number>, month: <Number>, date: <Number> }```|E.g. 1 Jan 2020 <br> {year: 2020, month: 0, date: 1}| 
+|@selectDate|```{ year: <Number>, month: <Number>, date: <Number> }```|E.g. 1 Jan 2020 <br> {year: 2020, month: 0, date: 1}|
