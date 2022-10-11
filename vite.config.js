@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/CalendarView.vue'),
+      entry: resolve(__dirname, 'src/lib.js'),
       name: 'vue-single-date-picker',
       fileName: `lib`,
       formats: ['es'],
