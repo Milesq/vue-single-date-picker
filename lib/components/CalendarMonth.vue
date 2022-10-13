@@ -69,7 +69,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .single-date-picker__calendar-month {
   width: 100%;
   padding: 10px;

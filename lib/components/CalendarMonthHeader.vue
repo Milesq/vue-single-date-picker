@@ -64,6 +64,7 @@ export default {
     font-size: 20px;
     text-transform: capitalize;
   }
+
   .single-date-picker__arrow {
     cursor: pointer;
   }

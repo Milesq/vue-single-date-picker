@@ -1,5 +1,5 @@
 <template>
-  <div id="single-date-picker" class="single-date-picker__calendar-view">
+  <div class="single-date-picker__calendar-view">
     <CalendarMonthHeader
       :year="year"
       :month="month"
@@ -195,20 +195,13 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-#single-date-picker {
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
+<style scoped>
 .single-date-picker__calendar-view {
+  font-family: Arial, sans-serif;
+  color: #2c3e50;
   max-width: 300px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
-  color: #0d1e44;
 }
 </style>

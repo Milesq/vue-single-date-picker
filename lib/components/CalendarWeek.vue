@@ -13,6 +13,7 @@
 
 <script>
 import CalendarDate from './CalendarDate.vue';
+
 export default {
   components: {
     CalendarDate,
