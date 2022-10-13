@@ -1,20 +1,12 @@
-<template>
-  <div id="app">
-    <h1>single date picker</h1>
-    <calendar-view />
-  </div>
-</template>
-
-<script>
-import CalendarView from './CalendarView.vue';
-
-export default {
-  name: 'App',
-  components: {
-    CalendarView,
-  },
-};
+<script setup>
+import { CalendarView } from '../lib/lib';
 </script>
+
+<template>
+  <h1>single date picker</h1>
+
+  <calendar-view />
+</template>
 
 <style lang="scss">
 #app {
@@ -29,10 +21,9 @@ export default {
 }
 
 h1 {
-  color: #c7a3b5;
+  color: #ececec;
   background: linear-gradient(to right, #e0caca, #d4b8ca, #c7a3b5);
   background-clip: text;
-  -webkit-text-fill-color: transparent;
   font-size: 60px;
   font-weight: 300;
   font-family: 'Lato', Arial, Helvetica, sans-serif;
