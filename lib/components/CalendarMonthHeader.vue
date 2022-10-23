@@ -1,31 +1,22 @@
 <template>
   <div class="single-date-picker__calendar-month-header">
-    <div class="single-date-picker__arrow left" @click="toggleMonth(-1)">
-      <i class="material-icons"> keyboard_arrow_left </i>
-    </div>
+    <LeftIcon class="single-date-picker__arrow" @click="toggleMonth(-1)" />
+
     <div class="single-date-picker__year">{{ fullMonth }} {{ year }}</div>
-    <div class="single-date-picker__arrow right" @click="toggleMonth(1)">
-      <i class="material-icons"> keyboard_arrow_right </i>
-    </div>
+
+    <RightIcon class="single-date-picker__arrow" @click="toggleMonth(1)" />
   </div>
 </template>
 
 <script>
-const MONTHS = [
-  'january',
-  'february',
-  'march',
-  'april',
-  'may',
-  'june',
-  'july',
-  'august',
-  'september',
-  'october',
-  'november',
-  'december',
-];
+import LeftIcon from '~icons/mdi/ChevronLeft';
+import RightIcon from '~icons/mdi/ChevronRight';
+
 export default {
+  components: {
+    LeftIcon,
+    RightIcon,
+  },
   inject: ['months'],
   props: {
     year: {
