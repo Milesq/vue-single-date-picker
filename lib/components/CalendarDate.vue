@@ -47,17 +47,17 @@ export default {
   display: table-cell;
   vertical-align: middle;
   box-sizing: border-box;
-  cursor: default;
+  cursor: pointer;
 
-  &:hover,
+  &:not(.single-date-picker__today):hover,
   &.single-date-picker__selected {
     border-radius: 50%;
-    border: 2px solid pink;
+    border: 2px solid var(--vsdp-accent-color);
   }
 
   &.single-date-picker__today {
     border-radius: 50%;
-    background-image: linear-gradient(to bottom right, #f1b4b9, #d2b0c3);
+    background: var(--vsdp-primary-color);
   }
 }
 </style>

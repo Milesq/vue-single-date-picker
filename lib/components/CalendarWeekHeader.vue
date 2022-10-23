@@ -20,6 +20,6 @@ export default {
 <style scoped>
 .single-date-picker__calendar-week-header {
   margin-top: 15px;
-  color: #77505e;
+  color: var(--vsdp-secondary-color);
 }
 </style>

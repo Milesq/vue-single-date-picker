@@ -224,10 +224,13 @@ export default {
 };
 </script>
 
+<style lang="scss">
+@import './assets/variables.css';
+</style>
+
 <style scoped>
 .single-date-picker__calendar-view {
   font-family: Arial, sans-serif;
-  color: #2c3e50;
   max-width: 300px;
   background-color: white;
   border-radius: 10px;

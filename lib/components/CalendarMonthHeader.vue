@@ -44,12 +44,12 @@ export default {
 <style lang="scss" scoped>
 .single-date-picker__calendar-month-header {
   padding: 15px;
-  background-image: linear-gradient(to right, #e0caca, #d4b8ca, #c7a3b5);
+  background: var(--vsdp-primary-color);
   display: flex;
   justify-content: space-between;
   border-radius: 10px 10px 0 0;
   align-items: center;
-  color: #77505e;
+  color: var(--vsdp-secondary-color);
 
   .single-date-picker__year {
     font-weight: 900;
