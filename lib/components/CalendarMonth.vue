@@ -2,7 +2,7 @@
   <table class="single-date-picker__calendar-month">
     <thead>
       <CalendarWeekHeader
-        v-for="(day, index) in daysInWeek"
+        v-for="(day, index) in dayNames"
         :key="index"
         :day="day"
       />
@@ -29,6 +29,7 @@ export default {
     CalendarWeekHeader,
     CalendarWeek,
   },
+  inject: ['dayNames'],
   props: {
     datesPerWeek: {
       type: Array,
@@ -47,22 +48,17 @@ export default {
       default: 0,
     },
   },
-  data() {
-    return {
-      daysInWeek: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-    };
-  },
   created() {
-    this.rotateDaysInWeek(this.daysInWeek, this.weekStartDay);
+    this.rotateDaysInWeek(this.dayNames, this.weekStartDay);
   },
   methods: {
     selectDate(date) {
       this.$emit('selectDate', date);
     },
-    rotateDaysInWeek(daysInWeek, shifts) {
+    rotateDaysInWeek(dayNames, shifts) {
       while (shifts--) {
-        var temp = daysInWeek.shift();
-        daysInWeek.push(temp);
+        var temp = dayNames.shift();
+        dayNames.push(temp);
       }
     },
   },

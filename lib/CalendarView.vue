@@ -34,6 +34,7 @@ const MONTHS = [
   'november',
   'december',
 ];
+const DAY_NAMES = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
 export default {
   name: 'CalendarView',
@@ -55,10 +56,15 @@ export default {
       type: Array,
       default: () => MONTHS,
     },
+    dayNames: {
+      type: Array,
+      default: () => DAY_NAMES,
+    },
   },
   provide() {
     return {
       months: this.months,
+      dayNames: this.dayNames,
     };
   },
   data() {
