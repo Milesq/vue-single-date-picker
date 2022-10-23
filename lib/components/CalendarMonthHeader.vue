@@ -26,6 +26,7 @@ const MONTHS = [
   'december',
 ];
 export default {
+  inject: ['months'],
   props: {
     year: {
       type: Number,
@@ -38,7 +39,7 @@ export default {
   },
   computed: {
     fullMonth() {
-      return MONTHS[this.month];
+      return this.months[this.month];
     },
   },
   methods: {

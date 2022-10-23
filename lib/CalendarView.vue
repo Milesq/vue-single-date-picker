@@ -20,6 +20,20 @@ import CalendarMonthHeader from './components/CalendarMonthHeader.vue';
 import CalendarMonth from './components/CalendarMonth.vue';
 
 const NUM_DAYS_IN_WEEK = 7;
+const MONTHS = [
+  'january',
+  'february',
+  'march',
+  'april',
+  'may',
+  'june',
+  'july',
+  'august',
+  'september',
+  'october',
+  'november',
+  'december',
+];
 
 export default {
   name: 'CalendarView',
@@ -37,6 +51,15 @@ export default {
       default: 0,
       validator: value => value >= 0 && value <= 6,
     },
+    months: {
+      type: Array,
+      default: () => MONTHS,
+    },
+  },
+  provide() {
+    return {
+      months: this.months,
+    };
   },
   data() {
     return {
