@@ -55,6 +55,7 @@ export default {
     font-weight: 900;
     font-size: 20px;
     text-transform: capitalize;
+    color: var(--vsdp-primary-text);
   }
 
   .single-date-picker__arrow {

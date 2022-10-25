@@ -58,6 +58,7 @@ export default {
   &.single-date-picker__today {
     border-radius: 50%;
     background: var(--vsdp-primary-color);
+    color: var(--vsdp-primary-text);
   }
 }
 </style>
