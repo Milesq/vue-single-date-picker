@@ -1,6 +1,6 @@
 {
   "name": "vue3-single-date-picker",
-  "version": "0.5.13",
+  "version": "0.6.0",
   "main": "./dist/lib.mjs",
   "module": "./dist/lib.mjs",
   "license": "MIT",
